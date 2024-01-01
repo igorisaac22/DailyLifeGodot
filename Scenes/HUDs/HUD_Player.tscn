@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://mr3ktnchn36b"]
+
+[ext_resource type="Script" path="res://Scripts/HUD_Player.gd" id="1_pfcjm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_siomy"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rydyt"]
+line_spacing = 6.0
+font_size = 50
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD_Player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pfcjm")
+
+[node name="UI_BarColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -541.0
+offset_top = -170.0
+offset_right = 541.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="UI_Box_Info" type="GridContainer" parent="UI_BarColor"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 20.0
+offset_right = 492.0
+offset_bottom = 173.0
+
+[node name="Name" type="Label" parent="UI_BarColor/UI_Box_Info"]
+layout_mode = 2
+text = "Name: xxxxxxxxxxxxxxx"
+label_settings = SubResource("LabelSettings_siomy")
+
+[node name="Money" type="Label" parent="UI_BarColor/UI_Box_Info"]
+layout_mode = 2
+text = "Money: $0000000000000"
+label_settings = SubResource("LabelSettings_siomy")
+
+[node name="TimeHour" type="Label" parent="UI_BarColor/UI_Box_Info"]
+layout_mode = 2
+text = "Time: 00:00"
+label_settings = SubResource("LabelSettings_siomy")
+
+[node name="Hungry" type="Label" parent="UI_BarColor"]
+layout_mode = 2
+offset_left = 609.0
+offset_top = 20.0
+offset_right = 716.0
+offset_bottom = 65.0
+text = "Hungry"
+label_settings = SubResource("LabelSettings_siomy")
+
+[node name="Sleep" type="Label" parent="UI_BarColor"]
+layout_mode = 2
+offset_left = 609.0
+offset_top = 70.0
+offset_right = 687.0
+offset_bottom = 115.0
+text = "Sleep"
+label_settings = SubResource("LabelSettings_siomy")
+
+[node name="HungryBar" type="ProgressBar" parent="UI_BarColor"]
+modulate = Color(1, 0.85098, 0, 1)
+layout_mode = 2
+offset_left = 729.0
+offset_top = 29.0
+offset_right = 1037.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="SleepBar" type="ProgressBar" parent="UI_BarColor"]
+modulate = Color(0, 0, 0.576471, 1)
+layout_mode = 2
+offset_left = 729.0
+offset_top = 80.0
+offset_right = 1037.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+value = 100.0
+
+[node name="IconButton" type="TextureButton" parent="UI_BarColor"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 25.0
+offset_right = 169.0
+offset_bottom = 153.0
+
+[node name="IconTexture" type="TextureRect" parent="UI_BarColor"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 25.0
+offset_right = 169.0
+offset_bottom = 153.0
+
+[node name="DayCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_right = 180.0
+offset_bottom = 75.0
+text = "Day 1"
+label_settings = SubResource("LabelSettings_rydyt")
+
+[connection signal="pressed" from="UI_BarColor/IconButton" to="." method="_on_icon_button_pressed"]

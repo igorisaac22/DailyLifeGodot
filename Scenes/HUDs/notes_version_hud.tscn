@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhn0dgux1w2sb"]
+
+[ext_resource type="Script" path="res://Scripts/notes_version_hud.gd" id="1_8rm2k"]
+[ext_resource type="FontFile" uid="uid://b1ookgrb18ww7" path="res://Backgrounds/Tiktok.otf" id="1_qw8ki"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4oc8g"]
+font = ExtResource("1_qw8ki")
+font_size = 40
+
+[node name="NotesVersion_HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8rm2k")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = -28.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.396078, 0.498039, 0.756863, 0.87451)
+
+[node name="Label" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_right = 138.0
+offset_bottom = 63.0
+grow_horizontal = 2
+text = "Notes Version"
+label_settings = SubResource("LabelSettings_4oc8g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BG"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 106.0
+offset_right = 1002.0
+offset_bottom = 611.0
+theme_override_fonts/normal_font = ExtResource("1_qw8ki")
+theme_override_font_sizes/normal_font_size = 30
+text = "0.0.1
+alpha project with simple add system:
+    >rent house system, survival system, graduation system
+        and work system
+Places add in this version:
+    >rent house
+	>hospital
+	>university
+    >coffee restaurant
+    >job office
+
+character creator:
+    >simple character creator with a choose determinated   
+        boy and girl ready and write your name if you want
+
+navigation system:
+    > a simple city map to choose you want to go 
+
+
+0.0.2
+
+fixed minor bugs in the arquiteture mobile devices cpu
+
+fix bug to not working some actions inside the game
+
+add a notes version
+
+0.0.3
+
+fixed some bugs in work button not working hours passed by
+
+business hours in some places working correctly
+
+survival bars working normally
+
+hud overdrive working and appears in all actions places
+
+coasts values in hungry and sleep bar become a game more
+	balanced and not hard
+
+business hours add in places
+"
+
+[node name="CloseBtn" type="Button" parent="BG"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.0
+offset_bottom = 73.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[connection signal="pressed" from="BG/CloseBtn" to="." method="_on_close_btn_pressed"]

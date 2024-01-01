@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://ubnushqma7bw"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_7mkyu"]
+[ext_resource type="Texture2D" uid="uid://f5pvo0284qfx" path="res://Backgrounds/Main_Menu_BG.jpg" id="1_legdp"]
+[ext_resource type="FontFile" uid="uid://b1ookgrb18ww7" path="res://Backgrounds/Tiktok.otf" id="2_1baxi"]
+[ext_resource type="PackedScene" uid="uid://baeiapsry1xx2" path="res://Scenes/HUDs/hud_info_version.tscn" id="4_xvowd"]
+[ext_resource type="PackedScene" uid="uid://cupri6iag40us" path="res://Scenes/HUDs/instructions_hud.tscn" id="5_xnpga"]
+[ext_resource type="PackedScene" uid="uid://bhn0dgux1w2sb" path="res://Scenes/HUDs/notes_version_hud.tscn" id="6_rpt6m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cafn3"]
+font = ExtResource("2_1baxi")
+font_size = 250
+font_color = Color(0.823529, 0.792157, 0.937255, 1)
+outline_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_46tcp"]
+font_size = 30
+
+[node name="Main_Menu" type="Node"]
+script = ExtResource("1_7mkyu")
+
+[node name="MainMenuBg" type="Sprite2D" parent="."]
+position = Vector2(538, 346)
+scale = Vector2(1.08105, 1.02995)
+texture = ExtResource("1_legdp")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 15.0
+offset_right = 747.0
+offset_bottom = 268.0
+text = "Daily"
+label_settings = SubResource("LabelSettings_cafn3")
+
+[node name="Title2" type="Label" parent="."]
+offset_left = 497.0
+offset_top = 183.0
+offset_right = 909.0
+offset_bottom = 436.0
+text = "Life"
+label_settings = SubResource("LabelSettings_cafn3")
+
+[node name="GameVersionLabel" type="Label" parent="."]
+offset_left = 829.0
+offset_top = 386.0
+offset_right = 919.0
+offset_bottom = 431.0
+text = "0.0.2v"
+label_settings = SubResource("LabelSettings_46tcp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -144.0
+offset_right = -15.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="StartBtn" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1baxi")
+theme_override_font_sizes/font_size = 45
+text = "  Start Game   "
+
+[node name="InstructionsBtn" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1baxi")
+theme_override_font_sizes/font_size = 45
+text = "  Instructions  "
+
+[node name="QuitBtn" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1baxi")
+theme_override_font_sizes/font_size = 45
+text = "  Quit Game  "
+
+[node name="HUD_Info_Version" parent="." instance=ExtResource("4_xvowd")]
+visible = false
+
+[node name="Instructions_HUD" parent="." instance=ExtResource("5_xnpga")]
+visible = false
+
+[node name="NotesBtn" type="Button" parent="."]
+offset_left = 888.0
+offset_top = 16.0
+offset_right = 1055.0
+offset_bottom = 77.0
+text = "Notes Version"
+
+[node name="NotesVersion_HUD" parent="." instance=ExtResource("6_rpt6m")]
+
+[connection signal="pressed" from="HBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/InstructionsBtn" to="." method="_on_instructions_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="NotesBtn" to="." method="_on_notes_btn_pressed"]

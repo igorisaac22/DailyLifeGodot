@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc5hel7sxnp7j"]
+
+[ext_resource type="Texture2D" uid="uid://cmkk3u7lgwh2w" path="res://Backgrounds/JobAgency_BG.jpg" id="1_qhfrc"]
+[ext_resource type="Script" path="res://Scripts/job_agency.gd" id="1_ylbgq"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="2_clvgj"]
+[ext_resource type="PackedScene" uid="uid://c281sfh863leo" path="res://Scenes/HUDs/warning_hud.tscn" id="4_al17k"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="5_t3o6t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ak2g"]
+font_size = 40
+
+[node name="JobAgency" type="Node"]
+script = ExtResource("1_ylbgq")
+
+[node name="JobAgencyBg" type="Sprite2D" parent="."]
+position = Vector2(540, 248)
+scale = Vector2(1.07813, 0.857422)
+texture = ExtResource("1_qhfrc")
+
+[node name="HUD_Player" parent="." instance=ExtResource("2_clvgj")]
+offset_left = 5.0
+offset_right = 5.0
+
+[node name="EnterBtn" type="Button" parent="."]
+offset_left = 355.0
+offset_top = 362.0
+offset_right = 539.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 40
+text = "Enter"
+
+[node name="WarningHUD" parent="." instance=ExtResource("4_al17k")]
+position = Vector2(3, 0)
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("5_t3o6t")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = 14.0
+offset_bottom = 420.0
+
+[node name="BusinessHoursTxt" type="Label" parent="."]
+offset_left = 725.0
+offset_top = 9.0
+offset_right = 1066.0
+offset_bottom = 67.0
+text = "Open 7AM - 14PM"
+label_settings = SubResource("LabelSettings_8ak2g")
+
+[connection signal="pressed" from="EnterBtn" to="." method="_on_enter_btn_pressed"]

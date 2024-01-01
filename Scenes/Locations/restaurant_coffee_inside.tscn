@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://qqnwm6sbvdof"]
+
+[ext_resource type="Texture2D" uid="uid://dgssdh8rv37l8" path="res://Backgrounds/CoffeeRestaurant_BG.jpg" id="1_6y0q4"]
+[ext_resource type="Script" path="res://Scripts/restaurant_coffee_inside.gd" id="1_ngeud"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="2_of5jj"]
+[ext_resource type="PackedScene" uid="uid://bgpe5jxy3bqyg" path="res://Scenes/HUDs/work_hud.tscn" id="4_yhsbq"]
+[ext_resource type="PackedScene" uid="uid://be308u8og32kg" path="res://Scenes/HUDs/coffee_menu_hud.tscn" id="5_a8tfm"]
+[ext_resource type="PackedScene" uid="uid://b830khouxyks7" path="res://Scenes/HUDs/overdrive_status_hud.tscn" id="6_dkpqs"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="7_a2ho7"]
+
+[node name="Restaurant_Coffee_Inside" type="Node"]
+script = ExtResource("1_ngeud")
+
+[node name="CoffeeRestaurantBg" type="Sprite2D" parent="."]
+position = Vector2(535, 310)
+scale = Vector2(1.06445, 0.807292)
+texture = ExtResource("1_6y0q4")
+
+[node name="HUD_Player" parent="." instance=ExtResource("2_of5jj")]
+
+[node name="EatBtn" type="Button" parent="."]
+offset_left = 382.0
+offset_top = 394.0
+offset_right = 570.0
+offset_bottom = 479.0
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+
+[node name="WorkBtn" type="Button" parent="."]
+offset_left = 806.0
+offset_top = 234.0
+offset_right = 1012.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 40
+text = "Work"
+
+[node name="WorkHUD" parent="." instance=ExtResource("4_yhsbq")]
+visible = false
+
+[node name="Coffee_Menu_HUD" parent="." instance=ExtResource("5_a8tfm")]
+visible = false
+position = Vector2(-2, -13)
+
+[node name="OverdriveStatusHUD" parent="." instance=ExtResource("6_dkpqs")]
+visible = false
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("7_a2ho7")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = -923.0
+offset_bottom = -182.0
+
+[connection signal="pressed" from="EatBtn" to="." method="_on_eat_btn_pressed"]
+[connection signal="pressed" from="WorkBtn" to="." method="_on_work_btn_pressed"]

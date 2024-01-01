@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://xbc1yxfmiv60"]
+
+[ext_resource type="Script" path="res://Scripts/university_classroom.gd" id="1_05uqu"]
+[ext_resource type="Texture2D" uid="uid://bf4dw1nm7s4mb" path="res://Backgrounds/University_Classroom_BG.jpg" id="2_1l2a2"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="3_tcunq"]
+[ext_resource type="PackedScene" uid="uid://cht3vs3wekccq" path="res://Scenes/HUDs/university_courses_hud.tscn" id="4_6cw2b"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="5_jk822"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdswu"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_3agcf"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_la0hd"]
+font_size = 50
+
+[node name="University_Classroom" type="Node"]
+script = ExtResource("1_05uqu")
+
+[node name="UniversityClassroomBg" type="Sprite2D" parent="."]
+position = Vector2(541.5, 362)
+scale = Vector2(1.05566, 0.9375)
+texture = ExtResource("2_1l2a2")
+
+[node name="HUD_Player" parent="UniversityClassroomBg" instance=ExtResource("3_tcunq")]
+offset_left = -512.0
+offset_top = -384.0
+offset_right = -512.0
+offset_bottom = -384.0
+
+[node name="StudyBtn" type="Button" parent="UniversityClassroomBg"]
+offset_left = -419.169
+offset_top = -97.0667
+offset_right = -208.169
+offset_bottom = 22.9333
+theme_override_font_sizes/font_size = 50
+text = "Study"
+
+[node name="CoursesBtn" type="Button" parent="UniversityClassroomBg"]
+offset_left = 225.355
+offset_top = -355.29
+offset_right = 478.355
+offset_bottom = -235.29
+theme_override_font_sizes/font_size = 50
+text = "Courses"
+
+[node name="BG_HUD" type="ColorRect" parent="UniversityClassroomBg"]
+offset_left = 4.71457
+offset_top = -89.7197
+offset_right = 492.714
+offset_bottom = 159.281
+color = Color(0.12549, 0.231373, 0.0588235, 0.819608)
+
+[node name="Course_Info_Label" type="Label" parent="UniversityClassroomBg/BG_HUD"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 488.0
+offset_bottom = 78.0
+text = "Course: None yet"
+label_settings = SubResource("LabelSettings_hdswu")
+horizontal_alignment = 1
+
+[node name="Course_Time_Label" type="Label" parent="UniversityClassroomBg/BG_HUD"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 95.0
+offset_right = 487.0
+offset_bottom = 194.0
+text = "Hours Left: 0"
+label_settings = SubResource("LabelSettings_3agcf")
+horizontal_alignment = 1
+
+[node name="University_Courses_HUD" parent="." instance=ExtResource("4_6cw2b")]
+visible = false
+offset_top = -40.0
+offset_bottom = -40.0
+
+[node name="BG_HUD_CompleteCourse" type="ColorRect" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 242.0
+offset_right = 1060.0
+offset_bottom = 456.0
+color = Color(0.0117647, 0.368627, 0, 1)
+
+[node name="Label" type="Label" parent="BG_HUD_CompleteCourse"]
+layout_mode = 0
+offset_right = 1010.0
+offset_bottom = 121.0
+text = "Course Adm Complete"
+label_settings = SubResource("LabelSettings_la0hd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseBtn" type="Button" parent="BG_HUD_CompleteCourse"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -77.0
+offset_right = 105.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Close"
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("5_jk822")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = -926.0
+offset_bottom = -193.0
+
+[connection signal="pressed" from="UniversityClassroomBg/StudyBtn" to="." method="_on_study_btn_pressed"]
+[connection signal="pressed" from="UniversityClassroomBg/CoursesBtn" to="." method="_on_courses_btn_pressed"]
+[connection signal="pressed" from="BG_HUD_CompleteCourse/CloseBtn" to="." method="_on_close_btn_pressed"]

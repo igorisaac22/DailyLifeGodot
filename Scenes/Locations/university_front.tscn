@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjnqh2eqdqeh"]
+
+[ext_resource type="Script" path="res://Scripts/University_Front.gd" id="1_j1els"]
+[ext_resource type="Texture2D" uid="uid://cf1l2b2w8p8ay" path="res://Backgrounds/University_BG.jpg" id="2_2b5wh"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="3_hwuf7"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="4_s31sp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fjji5"]
+font_size = 40
+
+[node name="University_Front" type="Node"]
+script = ExtResource("1_j1els")
+
+[node name="UniversityBg" type="Sprite2D" parent="."]
+position = Vector2(546.75, 306.5)
+scale = Vector2(1.05908, 0.865885)
+texture = ExtResource("2_2b5wh")
+
+[node name="HUD_Player" parent="." instance=ExtResource("3_hwuf7")]
+
+[node name="EnterBtn" type="Button" parent="."]
+offset_left = 439.0
+offset_top = 328.0
+offset_right = 657.0
+offset_bottom = 429.0
+theme_override_font_sizes/font_size = 50
+text = "Enter"
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("4_s31sp")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = -924.0
+offset_bottom = -179.0
+
+[node name="BusinessHoursTxt" type="Label" parent="."]
+offset_left = 732.0
+offset_top = 4.0
+offset_right = 1073.0
+offset_bottom = 62.0
+text = "Open 8AM - 18PM"
+label_settings = SubResource("LabelSettings_fjji5")
+
+[connection signal="pressed" from="EnterBtn" to="." method="_on_enter_btn_pressed"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b41f6ljrkb1wh"]
+
+[ext_resource type="Script" path="res://Scripts/Restaurant_Coffee_Front.gd" id="1_t6180"]
+[ext_resource type="Texture2D" uid="uid://d2dqwvgeb1tno" path="res://Backgrounds/CoffeeRestaurantInside_BG.jpg" id="2_61ex8"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="3_5e203"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="4_ickbx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvtse"]
+font_size = 40
+
+[node name="Restaurant_Coffee_Front" type="Node"]
+script = ExtResource("1_t6180")
+
+[node name="CoffeeRestaurantInsideBg" type="Sprite2D" parent="."]
+position = Vector2(541, 276.75)
+scale = Vector2(1.05273, 0.759766)
+texture = ExtResource("2_61ex8")
+
+[node name="HUD_Player" parent="." instance=ExtResource("3_5e203")]
+
+[node name="EnterBtn" type="Button" parent="."]
+offset_left = 173.0
+offset_top = 302.0
+offset_right = 374.0
+offset_bottom = 405.0
+theme_override_font_sizes/font_size = 40
+text = "Enter"
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("4_ickbx")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = -925.0
+offset_bottom = -184.0
+
+[node name="BusinessHourTxt" type="Label" parent="."]
+offset_left = 780.0
+offset_top = 15.0
+offset_right = 1065.0
+offset_bottom = 73.0
+text = "Open 24 Hours"
+label_settings = SubResource("LabelSettings_yvtse")
+
+[connection signal="pressed" from="EnterBtn" to="." method="_on_enter_btn_pressed"]

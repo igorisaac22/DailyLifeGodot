@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bydehlmurm6xd"]
+
+[ext_resource type="Script" path="res://Scripts/university_corridors.gd" id="1_agubm"]
+[ext_resource type="Texture2D" uid="uid://cex3d7542o1ux" path="res://Backgrounds/University_Corridors_BG.jpg" id="2_fvtnh"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="3_o7csd"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="4_ayctn"]
+
+[node name="University_Corridors" type="Node"]
+script = ExtResource("1_agubm")
+
+[node name="UniversityCorridorsBg" type="Sprite2D" parent="."]
+position = Vector2(545, 288)
+scale = Vector2(1.061, 0.975)
+texture = ExtResource("2_fvtnh")
+
+[node name="HUD_Player" parent="." instance=ExtResource("3_o7csd")]
+
+[node name="EnterClassRoomBtn" type="Button" parent="."]
+offset_left = 233.0
+offset_top = 289.0
+offset_right = 486.0
+offset_bottom = 382.0
+theme_override_font_sizes/font_size = 40
+text = "ClassRoom"
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("4_ayctn")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = -929.0
+offset_bottom = -179.0
+
+[connection signal="pressed" from="EnterClassRoomBtn" to="." method="_on_enter_class_room_btn_pressed"]

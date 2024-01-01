@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://q4tqmbsnwqch"]
+
+[ext_resource type="Texture2D" uid="uid://idjv3jp10opb" path="res://Backgrounds/Hospital_Corridor_BG.jpg" id="1_vnpjl"]
+[ext_resource type="Script" path="res://Scripts/hospital_inside.gd" id="1_y6u3i"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="2_5rslb"]
+[ext_resource type="PackedScene" uid="uid://bgpe5jxy3bqyg" path="res://Scenes/HUDs/work_hud.tscn" id="3_yn5hk"]
+[ext_resource type="PackedScene" uid="uid://b830khouxyks7" path="res://Scenes/HUDs/overdrive_status_hud.tscn" id="4_ghy0o"]
+[ext_resource type="PackedScene" uid="uid://ua07csf5hfnc" path="res://Scenes/HUDs/pharmacy_store_hud.tscn" id="6_7eux8"]
+[ext_resource type="PackedScene" uid="uid://k88oxe3kof5x" path="res://Scenes/HUDs/health_hospital_treatment_hud.tscn" id="7_g3ebj"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="8_50tmq"]
+
+[node name="HospitalInside" type="Node"]
+script = ExtResource("1_y6u3i")
+
+[node name="HospitalCorridorBg" type="Sprite2D" parent="."]
+position = Vector2(539, 227)
+scale = Vector2(1.05469, 0.85026)
+texture = ExtResource("1_vnpjl")
+
+[node name="HUD_Player" parent="." instance=ExtResource("2_5rslb")]
+
+[node name="WorkBtn" type="Button" parent="."]
+offset_left = 444.0
+offset_top = 170.0
+offset_right = 679.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 50
+text = "Work"
+
+[node name="PharmacyBtn" type="Button" parent="."]
+offset_left = 684.0
+offset_top = 410.0
+offset_right = 1067.0
+offset_bottom = 535.0
+theme_override_font_sizes/font_size = 50
+text = "Pharmacy"
+
+[node name="OverdriveStatusHUD" parent="." instance=ExtResource("4_ghy0o")]
+visible = false
+
+[node name="Pharmacy_Store_HUD" parent="." instance=ExtResource("6_7eux8")]
+visible = false
+
+[node name="Health_Hospital_Treatment_HUD" parent="." instance=ExtResource("7_g3ebj")]
+visible = false
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("8_50tmq")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = -920.0
+offset_bottom = -180.0
+
+[node name="WorkHUD" parent="." instance=ExtResource("3_yn5hk")]
+visible = false
+position = Vector2(12, 54)
+
+[connection signal="pressed" from="WorkBtn" to="." method="_on_work_btn_pressed"]
+[connection signal="pressed" from="PharmacyBtn" to="." method="_on_pharmacy_btn_pressed"]

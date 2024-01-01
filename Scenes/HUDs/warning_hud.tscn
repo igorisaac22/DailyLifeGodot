@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://c281sfh863leo"]
+
+[ext_resource type="Script" path="res://Scripts/warning_hud.gd" id="1_awdw8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2nvue"]
+font_size = 60
+
+[node name="WarningHUD" type="Node2D"]
+script = ExtResource("1_awdw8")
+
+[node name="BG_HUD" type="ColorRect" parent="."]
+offset_top = 275.0
+offset_right = 1076.0
+offset_bottom = 495.0
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="Label" type="Label" parent="BG_HUD"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 124.0
+grow_horizontal = 2
+text = "This place is closed!"
+label_settings = SubResource("LabelSettings_2nvue")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="BG_HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -77.0
+offset_right = 111.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Close"
+
+[connection signal="pressed" from="BG_HUD/Button" to="." method="_on_button_pressed"]

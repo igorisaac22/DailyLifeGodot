@@ -1,0 +1,142 @@
+[gd_scene load_steps=5 format=3 uid="uid://ua07csf5hfnc"]
+
+[ext_resource type="Script" path="res://Scripts/pharmacy_store_hud.gd" id="1_2ne2g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ud10m"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_wm76o"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5k4y"]
+font_size = 60
+
+[node name="Pharmacy_Store_HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ne2g")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 44.0
+offset_right = 1014.0
+offset_bottom = 569.0
+color = Color(0.458824, 0.560784, 0.282353, 1)
+
+[node name="MedicamentNameContainer" type="VBoxContainer" parent="BG"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 134.0
+offset_right = 385.0
+offset_bottom = 388.0
+
+[node name="MedicamentName" type="Label" parent="BG/MedicamentNameContainer"]
+layout_mode = 2
+text = "Energetics"
+label_settings = SubResource("LabelSettings_ud10m")
+
+[node name="MedicamentName2" type="Label" parent="BG/MedicamentNameContainer"]
+layout_mode = 2
+text = "Full Energetic"
+label_settings = SubResource("LabelSettings_ud10m")
+
+[node name="MedicamentName3" type="Label" parent="BG/MedicamentNameContainer"]
+layout_mode = 2
+text = "Food Supliment
+"
+label_settings = SubResource("LabelSettings_ud10m")
+
+[node name="MedicamentName4" type="Label" parent="BG/MedicamentNameContainer"]
+layout_mode = 2
+text = "Full Food Supliment
+"
+label_settings = SubResource("LabelSettings_ud10m")
+
+[node name="MedicamentValueContainer" type="VBoxContainer" parent="BG"]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 134.0
+offset_right = 613.0
+offset_bottom = 388.0
+
+[node name="MedicamentPrice" type="Label" parent="BG/MedicamentValueContainer"]
+layout_mode = 2
+text = "$30"
+label_settings = SubResource("LabelSettings_wm76o")
+
+[node name="MedicamentPrice2" type="Label" parent="BG/MedicamentValueContainer"]
+layout_mode = 2
+text = "$70"
+label_settings = SubResource("LabelSettings_wm76o")
+
+[node name="MedicamentPrice3" type="Label" parent="BG/MedicamentValueContainer"]
+layout_mode = 2
+text = "$25"
+label_settings = SubResource("LabelSettings_wm76o")
+
+[node name="MedicamentPrice4" type="Label" parent="BG/MedicamentValueContainer"]
+layout_mode = 2
+text = "$60"
+label_settings = SubResource("LabelSettings_wm76o")
+
+[node name="BtnBuyContainer" type="VBoxContainer" parent="BG"]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 136.0
+offset_right = 869.0
+offset_bottom = 388.0
+theme_override_constants/separation = 6
+
+[node name="BuyBtn" type="Button" parent="BG/BtnBuyContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="BuyBtn2" type="Button" parent="BG/BtnBuyContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="BuyBtn3" type="Button" parent="BG/BtnBuyContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="BuyBtn4" type="Button" parent="BG/BtnBuyContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="Title" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230.5
+offset_right = 230.5
+offset_bottom = 86.0
+grow_horizontal = 2
+text = "Pharmacy Store"
+label_settings = SubResource("LabelSettings_s5k4y")
+
+[node name="CloseBtn" type="Button" parent="BG"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_bottom = 81.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[connection signal="pressed" from="BG/BtnBuyContainer/BuyBtn" to="." method="_on_buy_btn_pressed"]
+[connection signal="pressed" from="BG/BtnBuyContainer/BuyBtn2" to="." method="_on_buy_btn_2_pressed"]
+[connection signal="pressed" from="BG/BtnBuyContainer/BuyBtn3" to="." method="_on_buy_btn_3_pressed"]
+[connection signal="pressed" from="BG/BtnBuyContainer/BuyBtn4" to="." method="_on_buy_btn_4_pressed"]
+[connection signal="pressed" from="BG/CloseBtn" to="." method="_on_close_btn_pressed"]

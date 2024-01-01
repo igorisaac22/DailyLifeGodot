@@ -1,0 +1,268 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7fs8w43sxl4e"]
+
+[ext_resource type="Script" path="res://Scripts/Job_Applies_List_HUD.gd" id="1_60uxf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uvmw1"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_fnbql"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_li0c8"]
+font_size = 30
+
+[node name="Job_Applies_List_HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_60uxf")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_left = 71.0
+offset_top = 34.0
+offset_right = 1010.0
+offset_bottom = 683.0
+color = Color(0.258824, 0.490196, 0.854902, 1)
+
+[node name="Title" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 110.0
+grow_horizontal = 2
+text = "Jobs to Apply"
+label_settings = SubResource("LabelSettings_uvmw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="BG"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 114.0
+offset_right = 888.0
+offset_bottom = 603.0
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 41
+columns = 2
+
+[node name="BG1" type="ColorRect" parent="BG/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="JobName" type="Label" parent="BG/GridContainer/BG1"]
+layout_mode = 0
+offset_right = 397.0
+offset_bottom = 56.0
+text = "Name"
+label_settings = SubResource("LabelSettings_fnbql")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="BG/GridContainer/BG1"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 396.0
+offset_bottom = 167.0
+text = "Required Sup in Medicine
+$30 per hour
+Location: Hospital"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HireBtn1" type="Button" parent="BG/GridContainer/BG1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.5
+offset_top = -55.0
+offset_right = 54.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hire"
+
+[node name="BG2" type="ColorRect" parent="BG/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="JobName" type="Label" parent="BG/GridContainer/BG2"]
+layout_mode = 0
+offset_right = 397.0
+offset_bottom = 56.0
+text = "Name"
+label_settings = SubResource("LabelSettings_fnbql")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="BG/GridContainer/BG2"]
+layout_mode = 0
+offset_top = 49.0
+offset_right = 396.0
+offset_bottom = 167.0
+text = "Required Sup in Medicine
+$30 per hour
+Location: Hospital"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HireBtn2" type="Button" parent="BG/GridContainer/BG2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.5
+offset_top = -55.0
+offset_right = 54.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hire"
+
+[node name="BG3" type="ColorRect" parent="BG/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="JobName" type="Label" parent="BG/GridContainer/BG3"]
+layout_mode = 0
+offset_right = 397.0
+offset_bottom = 56.0
+text = "Name"
+label_settings = SubResource("LabelSettings_fnbql")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="BG/GridContainer/BG3"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 396.0
+offset_bottom = 167.0
+text = "Required Sup in Medicine
+$30 per hour
+Location: Hospital"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HireBtn3" type="Button" parent="BG/GridContainer/BG3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.5
+offset_top = -55.0
+offset_right = 54.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hire"
+
+[node name="BG4" type="ColorRect" parent="BG/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="JobName" type="Label" parent="BG/GridContainer/BG4"]
+layout_mode = 0
+offset_right = 397.0
+offset_bottom = 56.0
+text = "Name"
+label_settings = SubResource("LabelSettings_fnbql")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="BG/GridContainer/BG4"]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 396.0
+offset_bottom = 167.0
+text = "Required Sup in Medicine
+$30 per hour
+Location: Hospital"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HireBtn4" type="Button" parent="BG/GridContainer/BG4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.5
+offset_top = -55.0
+offset_right = 54.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hire"
+
+[node name="CloseBtn" type="Button" parent="BG"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 69.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="BG_Warning" type="ColorRect" parent="BG"]
+visible = false
+layout_mode = 0
+offset_left = 166.0
+offset_top = 268.0
+offset_right = 775.0
+offset_bottom = 423.0
+color = Color(0.490196, 0, 0.0627451, 1)
+
+[node name="Label" type="Label" parent="BG/BG_Warning"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You need a Graduation or
+ Especialization to hire this job"
+label_settings = SubResource("LabelSettings_li0c8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="BG/BG_Warning"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.5
+offset_top = -45.0
+offset_right = 48.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Close"
+
+[connection signal="pressed" from="BG/GridContainer/BG1/HireBtn1" to="." method="_on_hire_btn_1_pressed"]
+[connection signal="pressed" from="BG/GridContainer/BG2/HireBtn2" to="." method="_on_hire_btn_2_pressed"]
+[connection signal="pressed" from="BG/GridContainer/BG3/HireBtn3" to="." method="_on_hire_btn_3_pressed"]
+[connection signal="pressed" from="BG/GridContainer/BG4/HireBtn4" to="." method="_on_hire_btn_4_pressed"]
+[connection signal="pressed" from="BG/CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="pressed" from="BG/BG_Warning/Button" to="." method="_on_button_pressed"]

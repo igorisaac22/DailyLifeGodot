@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhj68rfo0oyuq"]
+
+[ext_resource type="Script" path="res://Scripts/neighboour_hood.gd" id="1_4m2lc"]
+[ext_resource type="Texture2D" uid="uid://b1y6kclvlveai" path="res://Backgrounds/Neighbourhood_BG.jpg" id="1_kc3qv"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="2_koyhk"]
+[ext_resource type="PackedScene" uid="uid://budofqelhyqlw" path="res://Scenes/HUDs/hud_confirm_rent_house.tscn" id="4_eopf6"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="5_v1yik"]
+
+[node name="NeighbourHood" type="Node"]
+script = ExtResource("1_4m2lc")
+
+[node name="Neighbourhood_BG" type="Sprite2D" parent="."]
+position = Vector2(541, 236)
+scale = Vector2(1.05371, 1.02214)
+texture = ExtResource("1_kc3qv")
+
+[node name="HUD_Player" parent="." instance=ExtResource("2_koyhk")]
+
+[node name="EnterHouseBtn" type="Button" parent="."]
+offset_left = 685.0
+offset_top = 381.0
+offset_right = 1041.0
+offset_bottom = 509.0
+theme_override_font_sizes/font_size = 45
+text = "Enter House"
+
+[node name="HUD_Confirm_Rent_House" parent="." instance=ExtResource("4_eopf6")]
+visible = false
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("5_v1yik")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 14.0
+offset_top = -300.0
+offset_right = 14.0
+offset_bottom = -300.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[connection signal="pressed" from="EnterHouseBtn" to="." method="_on_enter_house_btn_pressed"]

@@ -1,0 +1,278 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwus4yb1h6ede"]
+
+[ext_resource type="Texture2D" uid="uid://dvy0ch4dqr4j0" path="res://icon.svg" id="1_563tt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u3b6p"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_wkal0"]
+font_size = 25
+
+[node name="MenuStatus" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG_Color" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 29.0
+offset_right = 1032.0
+offset_bottom = 687.0
+color = Color(0.356863, 0.380392, 1, 1)
+
+[node name="Icon" type="TextureRect" parent="BG_Color"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 69.0
+offset_right = 251.0
+offset_bottom = 197.0
+texture = ExtResource("1_563tt")
+
+[node name="Name" type="Label" parent="BG_Color"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 235.0
+offset_right = 326.0
+offset_bottom = 273.0
+text = "XXXXXXXXXXXXXXXX"
+label_settings = SubResource("LabelSettings_u3b6p")
+horizontal_alignment = 1
+
+[node name="Statistics" type="Label" parent="BG_Color"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 157.0
+offset_right = 742.0
+offset_bottom = 195.0
+text = "All Player Statistics"
+label_settings = SubResource("LabelSettings_u3b6p")
+horizontal_alignment = 1
+
+[node name="GridContMainStatus" type="GridContainer" parent="BG_Color"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 302.0
+offset_right = 393.0
+offset_bottom = 589.0
+theme_override_constants/h_separation = 0
+columns = 2
+
+[node name="VBoxNameStatus" type="VBoxContainer" parent="BG_Color/GridContMainStatus"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Money" type="Label" parent="BG_Color/GridContMainStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Money
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="Sleep" type="Label" parent="BG_Color/GridContMainStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Sleep"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="Hungry" type="Label" parent="BG_Color/GridContMainStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Hungry
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="Job" type="Label" parent="BG_Color/GridContMainStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Job"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="Friends" type="Label" parent="BG_Color/GridContMainStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Friends
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="Graduation" type="Label" parent="BG_Color/GridContMainStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Graduations
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="VBoxStatus" type="VBoxContainer" parent="BG_Color/GridContMainStatus"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MoneyValue" type="Label" parent="BG_Color/GridContMainStatus/VBoxStatus"]
+layout_mode = 2
+text = "$0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="SleepValue" type="Label" parent="BG_Color/GridContMainStatus/VBoxStatus"]
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="HungryValue" type="Label" parent="BG_Color/GridContMainStatus/VBoxStatus"]
+layout_mode = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="JobName" type="Label" parent="BG_Color/GridContMainStatus/VBoxStatus"]
+layout_mode = 2
+text = "none"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="FriendsValue" type="Label" parent="BG_Color/GridContMainStatus/VBoxStatus"]
+layout_mode = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="GraduationValue" type="Label" parent="BG_Color/GridContMainStatus/VBoxStatus"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="GridContAllStatus" type="GridContainer" parent="BG_Color"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 232.0
+offset_right = 923.0
+offset_bottom = 569.0
+theme_override_constants/h_separation = 0
+columns = 2
+
+[node name="VBoxNameStatus" type="VBoxContainer" parent="BG_Color/GridContAllStatus"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MoneyWon" type="Label" parent="BG_Color/GridContAllStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Total Money Won
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="MoneySpend" type="Label" parent="BG_Color/GridContAllStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Total Money Spend"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="Graduations" type="Label" parent="BG_Color/GridContAllStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Graduations Complete
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="DaysPassed" type="Label" parent="BG_Color/GridContAllStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Days Passed"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="MoneyInvest" type="Label" parent="BG_Color/GridContAllStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Profit Money Bank
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="SleepTimes" type="Label" parent="BG_Color/GridContAllStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Sleep Times
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="EatTimes" type="Label" parent="BG_Color/GridContAllStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Eat Times
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="HospitalTimes" type="Label" parent="BG_Color/GridContAllStatus/VBoxNameStatus"]
+layout_mode = 2
+text = "Recovery Hospital Times
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="VBoxStatus" type="VBoxContainer" parent="BG_Color/GridContAllStatus"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MoneyWonValue" type="Label" parent="BG_Color/GridContAllStatus/VBoxStatus"]
+layout_mode = 2
+text = "$0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="MoneySpendValue" type="Label" parent="BG_Color/GridContAllStatus/VBoxStatus"]
+layout_mode = 2
+text = "$0"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="GraduationsValue" type="Label" parent="BG_Color/GridContAllStatus/VBoxStatus"]
+layout_mode = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="DaysPassedValue" type="Label" parent="BG_Color/GridContAllStatus/VBoxStatus"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="MoneyInvestValue" type="Label" parent="BG_Color/GridContAllStatus/VBoxStatus"]
+layout_mode = 2
+text = "$0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="SleepTimesValue" type="Label" parent="BG_Color/GridContAllStatus/VBoxStatus"]
+layout_mode = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="EatTimesValue" type="Label" parent="BG_Color/GridContAllStatus/VBoxStatus"]
+layout_mode = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1
+
+[node name="HospitalTimesValue" type="Label" parent="BG_Color/GridContAllStatus/VBoxStatus"]
+layout_mode = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_wkal0")
+horizontal_alignment = 1

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://dafc8lmns04dn"]
+
+[ext_resource type="Script" path="res://Scripts/rent_house_inside.gd" id="1_axdso"]
+[ext_resource type="Texture2D" uid="uid://cbc6wsxjwlawb" path="res://Backgrounds/Rent_House_BG.jpg" id="1_e6fut"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="2_v16ld"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="4_5gmug"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_thddp"]
+font_size = 50
+
+[node name="Rent_House_Inside" type="Node"]
+script = ExtResource("1_axdso")
+
+[node name="RentHouseBg" type="Sprite2D" parent="."]
+position = Vector2(544.5, 281)
+scale = Vector2(1.06543, 1)
+texture = ExtResource("1_e6fut")
+
+[node name="HUD_Player" parent="." instance=ExtResource("2_v16ld")]
+
+[node name="Label_Info" type="Label" parent="."]
+offset_left = 26.0
+offset_top = 80.0
+offset_right = 432.0
+offset_bottom = 152.0
+label_settings = SubResource("LabelSettings_thddp")
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("4_5gmug")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = -916.0
+offset_bottom = -179.0
+
+[node name="SleepingBtn" type="Button" parent="."]
+offset_left = 506.0
+offset_top = 434.0
+offset_right = 655.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 30
+text = "Sleep"
+
+[node name="BackBtn" type="Button" parent="."]
+offset_left = 940.0
+offset_top = 471.0
+offset_right = 1063.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[connection signal="pressed" from="SleepingBtn" to="." method="_on_sleeping_btn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]

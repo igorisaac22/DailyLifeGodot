@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://pt5ttroag5b5"]
+
+[ext_resource type="Texture2D" uid="uid://ctod6l6yf6gdo" path="res://Backgrounds/Hospital_BG.jpg" id="1_kn7ng"]
+[ext_resource type="Script" path="res://Scripts/hospital_front.gd" id="1_vknmr"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="2_pa6r8"]
+[ext_resource type="PackedScene" uid="uid://bw0ghe7jtv0ef" path="res://Scenes/HUDs/back_to_map_btn_icon.tscn" id="3_qtt4d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5803"]
+font_size = 40
+
+[node name="HospitalFront" type="Node"]
+script = ExtResource("1_vknmr")
+
+[node name="HospitalBg" type="Sprite2D" parent="."]
+position = Vector2(537, 257)
+scale = Vector2(1.05566, 0.833333)
+texture = ExtResource("1_kn7ng")
+
+[node name="HUD_Player" parent="." instance=ExtResource("2_pa6r8")]
+
+[node name="EnterBtn" type="Button" parent="."]
+offset_left = 348.0
+offset_top = 256.0
+offset_right = 597.0
+offset_bottom = 389.0
+theme_override_font_sizes/font_size = 50
+text = "Enter"
+
+[node name="Back_to_Map_Btn_Icon" parent="." instance=ExtResource("3_qtt4d")]
+offset_left = 14.0
+offset_top = 420.0
+offset_right = 14.0
+offset_bottom = 420.0
+
+[node name="BusinessHoursTxt" type="Label" parent="."]
+offset_left = 779.0
+offset_top = 13.0
+offset_right = 1064.0
+offset_bottom = 71.0
+text = "Open 24 Hours"
+label_settings = SubResource("LabelSettings_x5803")
+
+[connection signal="pressed" from="EnterBtn" to="." method="_on_enter_btn_pressed"]

@@ -1,0 +1,170 @@
+[gd_scene load_steps=4 format=3 uid="uid://be308u8og32kg"]
+
+[ext_resource type="Script" path="res://Scripts/coffee_menu_hud.gd" id="1_jcffj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_15f07"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_5x0mb"]
+font_size = 40
+
+[node name="Coffee_Menu_HUD" type="Node2D"]
+script = ExtResource("1_jcffj")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_left = 123.0
+offset_top = 34.0
+offset_right = 969.0
+offset_bottom = 554.0
+color = Color(0.0156863, 0.054902, 0.00392157, 1)
+
+[node name="MenuTitle" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -118.5
+offset_top = 9.0
+offset_right = 118.5
+offset_bottom = 81.0
+grow_horizontal = 2
+text = "Menu List"
+label_settings = SubResource("LabelSettings_15f07")
+horizontal_alignment = 1
+
+[node name="FoodsListContainer" type="VBoxContainer" parent="BG"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 107.0
+offset_right = 502.0
+offset_bottom = 510.0
+
+[node name="Item_001" type="Label" parent="BG/FoodsListContainer"]
+layout_mode = 2
+text = "Coffee Cup"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_002" type="Label" parent="BG/FoodsListContainer"]
+layout_mode = 2
+text = "Coffee Cup with Cookies"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_003" type="Label" parent="BG/FoodsListContainer"]
+layout_mode = 2
+text = "Cappuccino"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_004" type="Label" parent="BG/FoodsListContainer"]
+layout_mode = 2
+text = "Donuts"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_005" type="Label" parent="BG/FoodsListContainer"]
+layout_mode = 2
+text = "Brioche"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_006" type="Label" parent="BG/FoodsListContainer"]
+layout_mode = 2
+text = "Strawberry Pie"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="FoodsListPricesContainer" type="VBoxContainer" parent="BG"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 107.0
+offset_right = 651.0
+offset_bottom = 510.0
+
+[node name="Item_001" type="Label" parent="BG/FoodsListPricesContainer"]
+layout_mode = 2
+text = "$5"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_002" type="Label" parent="BG/FoodsListPricesContainer"]
+layout_mode = 2
+text = "$10"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_003" type="Label" parent="BG/FoodsListPricesContainer"]
+layout_mode = 2
+text = "$8"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_004" type="Label" parent="BG/FoodsListPricesContainer"]
+layout_mode = 2
+text = "$3"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_005" type="Label" parent="BG/FoodsListPricesContainer"]
+layout_mode = 2
+text = "$6"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="Item_006" type="Label" parent="BG/FoodsListPricesContainer"]
+layout_mode = 2
+text = "$15"
+label_settings = SubResource("LabelSettings_5x0mb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 107.0
+offset_right = 773.0
+offset_bottom = 475.0
+theme_override_constants/separation = 13
+
+[node name="BuyBtn" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="BuyBtn2" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="BuyBtn3" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="BuyBtn4" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="BuyBtn5" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="BuyBtn6" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="CloseBtn" type="Button" parent="BG"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_bottom = 78.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[connection signal="pressed" from="BG/VBoxContainer/BuyBtn" to="." method="_on_buy_btn_pressed"]
+[connection signal="pressed" from="BG/VBoxContainer/BuyBtn2" to="." method="_on_buy_btn_2_pressed"]
+[connection signal="pressed" from="BG/VBoxContainer/BuyBtn3" to="." method="_on_buy_btn_3_pressed"]
+[connection signal="pressed" from="BG/VBoxContainer/BuyBtn4" to="." method="_on_buy_btn_4_pressed"]
+[connection signal="pressed" from="BG/VBoxContainer/BuyBtn5" to="." method="_on_buy_btn_5_pressed"]
+[connection signal="pressed" from="BG/VBoxContainer/BuyBtn6" to="." method="_on_buy_btn_6_pressed"]
+[connection signal="pressed" from="BG/CloseBtn" to="." method="_on_close_btn_pressed"]

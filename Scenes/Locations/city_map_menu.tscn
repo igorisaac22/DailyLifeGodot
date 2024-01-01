@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://b82ma8gbn0s6s"]
+
+[ext_resource type="Script" path="res://Scripts/city_map_menu.gd" id="1_dp3vp"]
+[ext_resource type="Texture2D" uid="uid://56irjvmq08c7" path="res://Backgrounds/CityMap_BG.jpg" id="1_lsptn"]
+[ext_resource type="PackedScene" uid="uid://mr3ktnchn36b" path="res://Scenes/HUDs/HUD_Player.tscn" id="2_wjkp8"]
+
+[node name="City_Map_Menu" type="Node"]
+script = ExtResource("1_dp3vp")
+
+[node name="CityMapBg" type="Sprite2D" parent="."]
+position = Vector2(542.5, 250.5)
+scale = Vector2(1.05371, 1.00651)
+texture = ExtResource("1_lsptn")
+
+[node name="HUD_Player" parent="." instance=ExtResource("2_wjkp8")]
+
+[node name="SuburbianBtn" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 443.0
+offset_right = 261.0
+offset_bottom = 517.0
+theme_override_font_sizes/font_size = 30
+text = "Suburbian"
+
+[node name="HospitalBtn" type="Button" parent="."]
+offset_left = 137.0
+offset_top = 310.0
+offset_right = 353.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 30
+text = "Hospital"
+
+[node name="UniversityBtn" type="Button" parent="."]
+offset_left = 518.0
+offset_top = 283.0
+offset_right = 734.0
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 30
+text = "University"
+
+[node name="CoffeeRestaurantBtn" type="Button" parent="."]
+offset_left = 315.0
+offset_top = 29.0
+offset_right = 616.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 30
+text = "Coffee Restaurant"
+
+[node name="JobOfficeBtn" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 410.0
+offset_right = 587.0
+offset_bottom = 482.0
+theme_override_font_sizes/font_size = 30
+text = "JobOffice"
+
+[connection signal="pressed" from="SuburbianBtn" to="." method="_on_suburbian_btn_pressed"]
+[connection signal="pressed" from="HospitalBtn" to="." method="_on_hospital_btn_pressed"]
+[connection signal="pressed" from="UniversityBtn" to="." method="_on_university_btn_pressed"]
+[connection signal="pressed" from="CoffeeRestaurantBtn" to="." method="_on_coffee_restaurant_btn_pressed"]
+[connection signal="pressed" from="JobOfficeBtn" to="." method="_on_job_office_btn_pressed"]

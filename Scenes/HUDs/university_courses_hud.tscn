@@ -1,0 +1,198 @@
+[gd_scene load_steps=5 format=3 uid="uid://cht3vs3wekccq"]
+
+[ext_resource type="Script" path="res://Scripts/university_courses_hud.gd" id="1_2r5a6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixk03"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8lf5"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_7rjb7"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[node name="University_Courses_HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2r5a6")
+
+[node name="BG_Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -470.0
+offset_top = 61.0
+offset_right = 470.0
+offset_bottom = 563.0
+grow_horizontal = 2
+color = Color(0.152941, 0.262745, 0.145098, 0.929412)
+
+[node name="Control" type="Control" parent="BG_Color"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="BG_Color/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.5
+offset_top = 41.0
+offset_right = 300.5
+offset_bottom = 113.0
+grow_horizontal = 2
+text = "Academic Courses of University"
+label_settings = SubResource("LabelSettings_ixk03")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG_Color/Control"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 123.0
+offset_right = 763.0
+offset_bottom = 482.0
+
+[node name="Adm_Description" type="Label" parent="BG_Color/Control/VBoxContainer"]
+layout_mode = 2
+text = "Administration                   $600                                50 Hours"
+label_settings = SubResource("LabelSettings_v8lf5")
+
+[node name="EspAdm_Description" type="Label" parent="BG_Color/Control/VBoxContainer"]
+layout_mode = 2
+text = "     Adm Health                   $200                                20 Hours"
+label_settings = SubResource("LabelSettings_v8lf5")
+
+[node name="Gtn_Description" type="Label" parent="BG_Color/Control/VBoxContainer"]
+layout_mode = 2
+text = "Gastronomy                        $350                                25 Hours"
+label_settings = SubResource("LabelSettings_v8lf5")
+
+[node name="Med_Description" type="Label" parent="BG_Color/Control/VBoxContainer"]
+layout_mode = 2
+text = "Medicine                              $650                               60 Hours"
+label_settings = SubResource("LabelSettings_v8lf5")
+
+[node name="Enf_Description" type="Label" parent="BG_Color/Control/VBoxContainer"]
+layout_mode = 2
+text = "Nurse                                   $550                                45 Hours"
+label_settings = SubResource("LabelSettings_v8lf5")
+
+[node name="Nut_Description" type="Label" parent="BG_Color/Control/VBoxContainer"]
+layout_mode = 2
+text = "Nutritionist                         $400                                35 Hours"
+label_settings = SubResource("LabelSettings_v8lf5")
+
+[node name="Odo_Description" type="Label" parent="BG_Color/Control/VBoxContainer"]
+layout_mode = 2
+text = "Dentist                                 $400                                35 Hours"
+label_settings = SubResource("LabelSettings_v8lf5")
+
+[node name="Psy_Description" type="Label" parent="BG_Color/Control/VBoxContainer"]
+layout_mode = 2
+text = "Psychologist                        $400                                35 Hours"
+label_settings = SubResource("LabelSettings_v8lf5")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BG_Color/Control"]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 127.0
+offset_right = 878.0
+offset_bottom = 453.0
+
+[node name="AdmBuyBtn" type="Button" parent="BG_Color/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Buy"
+
+[node name="EspAdmBuyBtn" type="Button" parent="BG_Color/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Buy"
+
+[node name="GasBuyBtn" type="Button" parent="BG_Color/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Buy"
+
+[node name="MedBuyBtn" type="Button" parent="BG_Color/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Buy"
+
+[node name="EnfBuyBtn" type="Button" parent="BG_Color/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Buy"
+
+[node name="NtrBuyBtn" type="Button" parent="BG_Color/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Buy"
+
+[node name="OdtBuyBtn" type="Button" parent="BG_Color/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Buy"
+
+[node name="PsyBuyBtn" type="Button" parent="BG_Color/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Buy"
+
+[node name="CloseBtn" type="Button" parent="BG_Color"]
+layout_mode = 0
+offset_left = 892.0
+offset_right = 940.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 40
+text = "x"
+
+[node name="BG_Color" type="ColorRect" parent="BG_Color"]
+visible = false
+layout_mode = 0
+offset_left = 119.0
+offset_top = 211.0
+offset_right = 810.0
+offset_bottom = 303.0
+
+[node name="Label" type="Label" parent="BG_Color/BG_Color"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You need a Adm Graduation
+ to make this especialization"
+label_settings = SubResource("LabelSettings_7rjb7")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="BG_Color/BG_Color"]
+
+[connection signal="pressed" from="BG_Color/Control/VBoxContainer2/AdmBuyBtn" to="." method="_on_adm_buy_btn_pressed"]
+[connection signal="pressed" from="BG_Color/Control/VBoxContainer2/EspAdmBuyBtn" to="." method="_on_esp_adm_buy_btn_pressed"]
+[connection signal="pressed" from="BG_Color/Control/VBoxContainer2/GasBuyBtn" to="." method="_on_gas_buy_btn_pressed"]
+[connection signal="pressed" from="BG_Color/Control/VBoxContainer2/MedBuyBtn" to="." method="_on_med_buy_btn_pressed"]
+[connection signal="pressed" from="BG_Color/Control/VBoxContainer2/EnfBuyBtn" to="." method="_on_enf_buy_btn_pressed"]
+[connection signal="pressed" from="BG_Color/Control/VBoxContainer2/NtrBuyBtn" to="." method="_on_ntr_buy_btn_pressed"]
+[connection signal="pressed" from="BG_Color/Control/VBoxContainer2/OdtBuyBtn" to="." method="_on_odt_buy_btn_pressed"]
+[connection signal="pressed" from="BG_Color/Control/VBoxContainer2/PsyBuyBtn" to="." method="_on_psy_buy_btn_pressed"]
+[connection signal="pressed" from="BG_Color/CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="timeout" from="BG_Color/BG_Color/Timer" to="." method="_on_timer_timeout"]
